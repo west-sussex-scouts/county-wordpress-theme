@@ -24,13 +24,12 @@
 # Change Log
 
 1. 1.0.4
-* Included auto update function to poll GitHub for latest version based on version number in style.css
-
+Included auto update function to poll GitHub for latest version based on version number in style.css
 1. 1.0
-* Base theme has been created
+Base theme has been created
 
 
 
 == Upgrade Notice ==
 1. 1.0.4
-* Upgrade to version to enable automatic updating
+Upgrade to version to enable automatic updating
