@@ -14,7 +14,7 @@
       </div>
       <div class="row">
         <div class="col-md-8 col-md-offset-1">
-        <h1><?= get_post_field('post_title', $post->ID) ?></h1>
+        <h1><?php echo get_bloginfo( 'name', 'raw' )?></h1>
         <?= get_post_field('post_content', $post->ID) ?>
         </div>
         <div class="col-md-3">
