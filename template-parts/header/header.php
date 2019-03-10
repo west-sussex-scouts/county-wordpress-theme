@@ -1,8 +1,10 @@
 <div id="header_container">
   <div id="header_content">
-      <div id="header_logo">
-        <?php if ( function_exists( 'the_custom_logo' ) ) {the_custom_logo();}?>
-      </div>
+    <?php if(function_exists('the_custom_logo')): ?>
+    <div id="header_logo">
+      <?php the_custom_logo() ?>
+    </div>
+    <?php endif ?>
       <div id="header_menu">
         <?php wp_nav_menu(
               array(

@@ -45,6 +45,54 @@ function add_charity_number_to_customizer($wp_customize) {
 }
 add_action( 'customize_register', 'add_charity_number_to_customizer' );
 
+function add_social_media_to_customizer($wp_customize) {
+	$wp_customize->add_section( 'social_media' , array(
+        'title'      => __( 'Social Media Info', 'scoutstheme' ),
+        'priority'   => 30,
+    ));
+	$wp_customize->add_setting(
+	   'twitter_handle',
+	   array(
+		   'default' => '',
+		   'type' => 'option',
+		   'capability' => 'edit_theme_options'
+		)
+   );
+   $wp_customize->add_setting(
+	'facebook_handle',
+	array(
+		'default' => '',
+		'type' => 'option',
+		'capability' => 'edit_theme_options'
+	 )
+	);
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'twitter_handle',
+		array(
+				'label'      => __( 'Twitter name', 'textdomain' ),
+				'description' => __( 'Your Twitter name. eg. @WestSussexScout', 'textdomain' ),
+				'settings'   => 'twitter_handle',
+				'priority'   => 10,
+				'section'    => 'social_media',
+				'type'       => 'text',
+		   )
+	   ) );
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'facebook_handle',
+		array(
+				'label'      => __( 'Facebook URL', 'textdomain' ),
+				'description' => __( 'Your Facebook URL. eg. https://en-gb.facebook.com/WSScouts/', 'textdomain' ),
+				'settings'   => 'facebook_handle',
+				'priority'   => 10,
+				'section'    => 'social_media',
+				'type'       => 'text',
+		   )
+	   ) );
+   }
+add_action( 'customize_register', 'add_social_media_to_customizer' );
+
 $format = get_post_format();
 if ( current_theme_supports( 'post-formats', $format ) ) {
 	printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',

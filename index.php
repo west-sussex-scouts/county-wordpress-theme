@@ -1,26 +1,32 @@
 <html lang="en">
-  <?php /* Template Name: Base Template */ ?>
+  <?php /* Template Name: Default Template */ ?>
   <?php require 'template-parts/head/head.php';?>
   <body>
-  <div id="body_container">
-  <?php require 'template-parts/header/header.php';?>
-  <div id="page_container">
-    <div id="page_content">
-      <?php
-        if ( have_posts() ) : while ( have_posts() ) : the_post();
-          get_template_part( 'template-parts/content/content', 'single' );
-
-        endwhile;
-
-        else:
-          get_template_part( 'template-parts/content/content', 'single' );
-
-        endif;
-        ?>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <?php require 'template-parts/header/header.php';?>
+        </div>
+      </div>
+      <div class="row">
+        <div id="page_container">
+          <div id="page_content">
+            <?php
+              if ( have_posts() ) : while ( have_posts() ) : the_post();
+                get_template_part( 'template-parts/content/content', 'single' );
+              endwhile;
+              else:
+                get_template_part( 'template-parts/content/content', 'single' );
+              endif;
+              ?>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <?php get_footer(); ?>
+        </div>
+      </div>
     </div>
-  </div>
-  <?php get_footer(); ?>
-
-  </div>
   </body>
 </html>
