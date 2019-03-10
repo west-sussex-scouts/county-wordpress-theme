@@ -45,12 +45,14 @@ height:100%
   max-width: 1200px;
   min-height:80px;
   margin: 0 auto;
+  vertical-align: center;
 }
 
 #header_logo{
   width:100px;
   height:auto;
   float:left;
+  vertical-align: center;
 }
 
 #header_menu{
@@ -115,5 +117,6 @@ margin-bottom: 5px;
 }
 img.custom-logo{
   max-width: 100% !important;
+  min-height: 80px;
   height: auto;
 }
