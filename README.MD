@@ -9,11 +9,10 @@
 1. License: GNU General Public License
 1. License URI: http://www.gnu.org/licenses/.
 
-> Free Wordpress Template for use by Scouting Groups in the UK.
 
 # Description
 
-
+> Free Wordpress Template for use by Scouting Groups in the UK.
 
 # Installation
 
@@ -24,7 +23,7 @@
 
 # Change Log
 
-1. 1.0 
+1. 1.0
 * Base theme has been created
 
 == Upgrade Notice ==
