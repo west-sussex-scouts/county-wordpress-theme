@@ -2,7 +2,7 @@
 Theme Name: Scouts - 2018
 Author: West Sussex Scouts Media Team
 Description: Wordpress Template for UK Scouting meeting the 2018 branding
-Version: 1.0.5
+Version: 1.0.6
 Tags: bootstrap
 */
 
@@ -30,62 +30,13 @@ h3{
   font-weight: 700;
 }
 
-#body_container{
-height:100%
-}
-
-#header_container{
-  width:100%;
-  min-height:80px;
-  margin: 0 auto;
-  border-bottom: 5px solid #7413dc;
-}
-
-#header_content{
-  max-width: 1200px;
-  min-height:80px;
-  margin: 0 auto;
-  vertical-align: center;
-}
-
-#header_logo{
-  width:100px;
-  height:auto;
-  float:left;
-  vertical-align: center;
-}
-
-#header_menu{
-  max-width:1000px;
-  height: 80px;
-  float:left;
-  vertical-align: middle;
-}
-
-#header_menu ul{
-  list-style-type:none;
-  margin: 0;
-  padding:30px;
-}
-
-#header_menu li {
-  display: inline;
-  padding: 5px;
-
-}
-
-#header_menu a{
+.header a{
   color: #7413dc;
-  font-weight:900;
-  text-decoration: none;
 }
 
-#header_menu a:hover{
-  color:#000000;
-  font-weight:900;
-  text-decoration: none;
+.header a:hover{
+  color:#00a794;
 }
-
 
 #index_container{
   max-width: 1200px;
@@ -115,8 +66,38 @@ margin-bottom: 5px;
   padding-bottom: 15px;
 
 }
-img.custom-logo{
-  max-width: 100% !important;
-  min-height: 80px;
-  height: auto;
+.navbar-brand img{
+  max-width: 136px;
+  max-height: 62px;
+}
+.container>.navbar-header{
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@media (min-width: 768px){
+  .navbar-header {
+      float: left;
+  }
+}
+.header.header > .navbar {
+  -webkit-box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
+  box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
+}
+
+#main-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  min-height: 75px;
+  margin-bottom: 0;
+}
+
+.navbar{
+  background: #FFFFFF;
+}
+
+
+.content{
+  padding-top: 60px;
 }

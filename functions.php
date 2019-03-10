@@ -115,5 +115,11 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 //Optional: Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
 
+require get_template_directory() . '/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';
+
+register_nav_menus( array(
+	'header-menu' => esc_html__( 'Header', 'theme-textdomain' ),
+) );
+
 
 ?>
