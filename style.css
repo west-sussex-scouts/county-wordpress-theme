@@ -2,7 +2,7 @@
 Theme Name: West Sussex Scouts
 Author: Max Dench
 Description: Wordpress Template for UK Scouting meeting the 2018 branding
-Version: 1.0.3
+Version: 1.0.5
 Tags: bootstrap
 */
 
@@ -112,4 +112,8 @@ margin-bottom: 5px;
   padding-top: 5px;
   padding-bottom: 15px;
 
+}
+img.custom-logo{
+  max-width: 100% !important;
+  height: auto;
 }
