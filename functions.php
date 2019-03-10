@@ -101,4 +101,19 @@ if ( current_theme_supports( 'post-formats', $format ) ) {
 		get_post_format_string( $format )
 	);
 }
+#Auto Update Functionality
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/west-sussex-scouts/generic-wordpress-theme',
+	__FILE__,
+	'generic-wordpress-theme'
+);
+
+#//Optional: If you're using a private repository, specify the access token like this:
+#$myUpdateChecker->setAuthentication('your-token-here');
+
+//Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
+
 ?>
