@@ -30,6 +30,7 @@
 
 
 
-== Upgrade Notice ==
+#Upgrade Notice
+
 1. 1.0.4
   * Upgrade to version to enable automatic updating
