@@ -5,7 +5,6 @@
 1. Requires at least: 4.6
 1. Tested up to: 4.7
 1. Stable tag: 1.0
-1. Requires PHP: 5.2.4
 1. License: GNU General Public License
 1. License URI: http://www.gnu.org/licenses/.
 
@@ -18,15 +17,20 @@
 
 > This section describes how to install the plugin and get it working.
 
+1. Download latest version of site theme  - https://github.com/west-sussex-scouts/generic-wordpress-theme/archive/master.zip
 1. Upload the plugin files to the `/wp-content/themes/Scouting2018` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the Theme through the 'Themes' screen in WordPress
 
 # Change Log
 
+1. 1.0.4
+* Included auto update function to poll GitHub for latest version based on version number in style.css
+
 1. 1.0
 * Base theme has been created
 
-1. 1.0.4
-* Updated Version number for testing
+
 
 == Upgrade Notice ==
+1. 1.0.4
+* Upgrade to version to enable automatic updating
