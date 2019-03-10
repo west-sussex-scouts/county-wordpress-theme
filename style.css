@@ -35,7 +35,7 @@ height:100%
 }
 
 #header_container{
-  width:100%
+  width:100%;
   min-height:80px;
   margin: 0 auto;
   border-bottom: 5px solid #7413dc;
@@ -98,9 +98,6 @@ height:100%
   margin: 0 auto;
 }
 
-#page_title{
-
-}
 
 #footer_container{
 width:100%;
