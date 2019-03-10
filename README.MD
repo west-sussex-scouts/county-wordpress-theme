@@ -26,4 +26,7 @@
 1. 1.0
 * Base theme has been created
 
+1. 1.0.4
+* Updated Version number for testing
+
 == Upgrade Notice ==
