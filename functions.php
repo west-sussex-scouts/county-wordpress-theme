@@ -29,4 +29,19 @@ function register_my_menus() {
  		);
  	}
 
+#Auto Update Functionality
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/west-sussex-scouts/generic-wordpress-theme',
+	__FILE__,
+	'generic-wordpress-theme'
+);
+
+#//Optional: If you're using a private repository, specify the access token like this:
+#$myUpdateChecker->setAuthentication('your-token-here');
+
+//Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('auto-update-testing');
+
+
 ?>
