@@ -1,37 +1,30 @@
-=== Plugin Name ===
+# Scouts Rebrand 2018 Theme
 
-Contributors: West Sussex Scouts Media Team
-Tags: Themes, Scouting, Scouts, ScoutsUK
-Requires at least: 4.6
-Tested up to: 4.7
-Stable tag: 1.0
-Requires PHP: 5.2.4
-License: GNU General Public License
-License URI: http://www.gnu.org/licenses/.
+1. Contributors: West Sussex Scouts Media Team
+1. Tags: Themes, Scouting, Scouts, ScoutsUK
+1. Requires at least: 4.6
+1. Tested up to: 4.7
+1. Stable tag: 1.0
+1. Requires PHP: 5.2.4
+1. License: GNU General Public License
+1. License URI: http://www.gnu.org/licenses/.
 
-Free Wordpress Template for use by Scouting Groups in the UK.
+> Free Wordpress Template for use by Scouting Groups in the UK.
 
-== Description ==
+# Description
 
 
 
-== Installation ==
+# Installation
 
-This section describes how to install the plugin and get it working.
-
-e.g.
+> This section describes how to install the plugin and get it working.
 
 1. Upload the plugin files to the `/wp-content/themes/Scouting2018` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the Theme through the 'Themes' screen in WordPress
+1. Activate the Theme through the 'Themes' screen in WordPress
 
+# Change Log
 
-== Screenshots ==
-
-
-
-== Changelog ==
-
-= 1.0 =
+1. 1.0 
 * Base theme has been created
 
 == Upgrade Notice ==
