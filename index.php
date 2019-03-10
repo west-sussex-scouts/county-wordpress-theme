@@ -1,20 +1,26 @@
-<?php /* Template Name: Page Template */ ?>
+<html lang="en">
+  <?php /* Template Name: Base Template */ ?>
+  <?php require 'template-parts/head/head.php';?>
+  <body>
+  <div id="body_container">
+  <?php require 'template-parts/header/header.php';?>
+  <div id="page_container">
+    <div id="page_content">
+      <?php
+        if ( have_posts() ) : while ( have_posts() ) : the_post();
+          get_template_part( 'template-parts/content/content', 'single' );
 
-<?php require 'template-parts/header/header.php';?>
-<body>
-<div id="page_container">
-  <div id="page_content">
-    <?php
-      if ( have_posts() ) : while ( have_posts() ) : the_post();
-        get_template_part( 'template-parts/content/content', 'single' );
+        endwhile;
 
-      endwhile;
+        else:
+          get_template_part( 'template-parts/content/content', 'single' );
 
-      else:
-        get_template_part( 'template-parts/content/content', 'single' );
-
-      endif;
-      ?>
+        endif;
+        ?>
+    </div>
   </div>
-</div>
-<?php get_footer(); ?>
+  <?php get_footer(); ?>
+
+  </div>
+  </body>
+</html>
