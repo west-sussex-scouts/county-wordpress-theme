@@ -16,11 +16,7 @@
           ?>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md">
-          <?php get_footer(); ?>
-        </div>
-      </div>
     </div>
+    <?php get_footer(); ?>
   </body>
 </html>

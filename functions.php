@@ -119,7 +119,7 @@ require get_template_directory() . '/wp-bootstrap-navwalker/class-wp-bootstrap-n
 
 register_nav_menus( array(
 	'header-menu' => esc_html__( 'Header', 'theme-textdomain' ),
+	'footer-menu' => esc_html__( 'Footer', 'theme-textdomain' ),
 ) );
-
 
 ?>
