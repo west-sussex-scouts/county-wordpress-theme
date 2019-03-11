@@ -27,7 +27,8 @@ h2{
 }
 
 h3{
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 40px;
 }
 
 #footer_container{
@@ -112,14 +113,34 @@ footer .col span{
   font-size: 13px;
   font-weight: 400;
 }
+@media only screen and (max-width: 1000px){
+  footer li
+  footer .col span{
+    width: 100%;
+    margin: 0 5px 0 0;
+  }
 
-footer .col li:nth-child(odd) {
-  margin: 0 5% 0 0;
+  footer .col li:nth-child(odd) {
+    margin: 0 5px 0 0;
+  }
 }
-footer .col li {
-  float: left;
-  width: 47.5%;
-  margin: 0 0 5px 0;
+
+@media only screen and (max-width: 700px){
+  footer li
+  footer .col span{
+    font-size: 12px !important;
+  }
+}
+@media only screen and (min-width: 1000px){
+  footer .col li:nth-child(odd) {
+    margin: 0 5% 0 0;
+  }
+
+  footer .col li {
+    float: left;
+    width: 47.5%;
+    margin: 0 0 5px 0;
+  }
 }
 
 .quote-row h6{
@@ -175,7 +196,6 @@ footer .col li {
   background: none;
   border: 2px solid #fff;
   padding: 12px 22px;
-  font-weight: 300;
 }
 .btn.outline:hover {
   background: #FFFFFF;
@@ -189,11 +209,21 @@ footer .col li {
   color: #7413dc !important;
   border: 2px solid #fff;
   padding: 12px 22px;
-  font-weight: 300;
 }
 .btn.white:hover {
   background: #00a794;
   border: 2px solid #00a794;
+  color: #FFFFFF !important;
+  padding: 12px 22px;
+}
+
+.btn.green {
+  background: #23a950;
+  color: #FFFFFF !important;
+  padding: 12px 22px;
+}
+.btn.green:hover {
+  background: #27be5a;
   color: #FFFFFF !important;
   padding: 12px 22px;
 }
@@ -206,5 +236,43 @@ footer .col li {
   min-width: 150px;
   border-radius: 2px;
   font-size: 16px;
+  font-weight: 700;
+}
 
+.section-cards h5{
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+.section-cards .card-body{
+  height: 135px;
+}
+
+.section-cards a:hover{
+  text-decoration: none;
+}
+
+.section-cards .card{
+  transition: transform .2s;
+}
+.section-cards .card:hover{
+  transform: scale(1.1);
+  z-index: 10000;
+  -webkit-box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
+  box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
+}
+
+.volunteers-section p{
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4em;
+}
+
+.welcome-section h1{
+  font-size: 65px;
+  line-height: 1em;
+}
+
+.welcome-section p{
+  font-size: 18px;
 }
