@@ -31,6 +31,19 @@
     background: #006ddf;
     color: #FFFFFF;
 }
+.bg-scouts-green{
+    background: #23a950;
+    color: #FFFFFF;
+}
+.bg-scouts-navy{
+    background: #003982;
+    color: #FFFFFF;
+}
+
+.bg-scouts-black{
+    background: #000000;
+    color: #FFFFFF;
+}
 
 .bg-scouts-teal{
     background: #00a794;
