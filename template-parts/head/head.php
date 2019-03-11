@@ -24,7 +24,25 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
 
+    <!-- Custom scout colours -->
+    <link href="<?php echo get_bloginfo('template_directory'); ?>/scout-colours.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#7413dc"
+        },
+        "button": {
+          "background": "#ffe627"
+        }
+      },
+      "theme": "edgeless"
+    })});
+    </script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

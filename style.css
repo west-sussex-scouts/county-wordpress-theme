@@ -81,3 +81,44 @@ margin-bottom: 5px;
 .navbar-nav .active>.nav-link{
   color: rgba(0,0,0,.9) !important;
 }
+
+footer{
+  line-height: 20px;
+  /* text-align: center; */
+}
+
+footer a{
+  font-weight: 300;
+}
+
+footer ul>li{
+  list-style: none;
+}
+footer ul{
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+footer .col h6 {
+  font-size: 15px;
+  padding: 0 0 7px 0;
+  border-bottom: 1px solid;
+  margin: 0 0 20px 0;
+}
+
+footer li a,
+footer .col span{
+  color: #666666;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+footer .col li:nth-child(odd) {
+  margin: 0 5% 0 0;
+}
+footer .col li {
+  float: left;
+  width: 47.5%;
+  margin: 0 0 5px 0;
+}
