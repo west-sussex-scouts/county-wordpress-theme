@@ -2,7 +2,7 @@
 Theme Name: Scouts - 2018
 Author: West Sussex Scouts Media Team
 Description: Wordpress Template for UK Scouting meeting the 2018 branding
-Version: 1.0.6
+Version: 1.0.7
 Tags: bootstrap
 */
 
@@ -30,28 +30,6 @@ h3{
   font-weight: 700;
 }
 
-.header a{
-  color: #7413dc;
-}
-
-.header a:hover{
-  color:#00a794;
-}
-
-#index_container{
-  max-width: 1200px;
-  min-height: 300px;
-  margin: 0 auto;
-}
-
-#page_container{
-  min-width: 600px;
-  max-width:700px;
-  min-height: 300px;
-  margin: 0 auto;
-}
-
-
 #footer_container{
 width:100%;
 min-height:100px;
@@ -75,11 +53,6 @@ margin-bottom: 5px;
   margin-left: 0;
 }
 
-@media (min-width: 768px){
-  .navbar-header {
-      float: left;
-  }
-}
 .header.header > .navbar {
   -webkit-box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
   box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
@@ -97,6 +70,17 @@ margin-bottom: 5px;
   background: #FFFFFF;
 }
 
+.navbar-nav .nav-link{
+  color: #7413dc !important;
+}
+
+.navbar-nav .nav-link:hover{
+  color:#00a794 !important;
+}
+
+.navbar-nav .active>.nav-link{
+  color: rgba(0,0,0,.9) !important;
+}
 
 .content{
   padding-top: 60px;
