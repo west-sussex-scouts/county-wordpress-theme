@@ -15,7 +15,7 @@ function register_my_menus() {
   register_nav_menus(
     array(
 			'header-menu' => __( 'Header Menu' ),
-			'extra-menu' => __( 'Extra Menu' )
+			'footer-menu' => esc_html__( 'Footer Links', 'theme-textdomain' ),
 		)
 	);
 }
@@ -101,12 +101,13 @@ if ( current_theme_supports( 'post-formats', $format ) ) {
 		get_post_format_string( $format )
 	);
 }
+
 #Auto Update Functionality
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/west-sussex-scouts/generic-wordpress-theme',
+	'https://github.com/west-sussex-scouts/county-wordpress-theme',
 	__FILE__,
-	'generic-wordpress-theme'
+	'county-wordpress-theme'
 );
 
 #//Optional: If you're using a private repository, specify the access token like this:
@@ -116,10 +117,5 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 $myUpdateChecker->setBranch('master');
 
 require get_template_directory() . '/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';
-
-register_nav_menus( array(
-	'header-menu' => esc_html__( 'Header', 'theme-textdomain' ),
-	'footer-menu' => esc_html__( 'Footer', 'theme-textdomain' ),
-) );
 
 ?>
