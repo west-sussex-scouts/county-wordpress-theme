@@ -48,7 +48,7 @@
       </div>
       <div class="col col-6 col-md-3 scouts-red pt-2 pb-2 pl-2 pr-2 pt-md-5 pb-md-5 pl-md-4 pr-md-4">
         <h6>Contact Us</h6>
-        <span>&copy; <?php echo get_bloginfo( 'name', 'raw' )?> <?php echo date('Y')?><br /><?php if (get_option('charity_number')): ?> Registered Charity Number <?php echo get_option('charity_number')?><?php endif ?></span>
+        <span>&copy; <?php echo get_bloginfo( 'name', 'raw' )?> <?php echo date('Y')?><br /><?php if (get_option('charity_number')): ?> Registered Charity Number <span id="charity_number"><?php echo get_option('charity_number')?></span><?php endif ?></span>
       </div>
     </div>
   </div>
