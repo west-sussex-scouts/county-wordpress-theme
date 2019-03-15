@@ -55,8 +55,8 @@ margin-bottom: 5px;
 }
 
 .header.header > .navbar {
-  -webkit-box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
-  box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
+  -webkit-box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
+  box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
 }
 
 #main-nav {
@@ -114,7 +114,7 @@ footer .col span{
   font-weight: 400;
 }
 @media only screen and (max-width: 1000px){
-  footer li
+  footer li,
   footer .col span{
     width: 100%;
     margin: 0 5px 0 0;
@@ -126,7 +126,7 @@ footer .col span{
 }
 
 @media only screen and (max-width: 700px){
-  footer li
+  footer li,
   footer .col span{
     font-size: 12px !important;
   }
@@ -244,6 +244,12 @@ footer .col span{
   font-weight: 800;
   margin-bottom: 0;
 }
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .section-cards h5 {
+    font-size: 27px;
+  }
+}
+
 .section-cards .card-body{
   height: 135px;
 }
@@ -258,8 +264,8 @@ footer .col span{
 .section-cards .card:hover{
   transform: scale(1.1);
   z-index: 10000;
-  -webkit-box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
-  box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
+  -webkit-box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
+  box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
 }
 
 .volunteers-section p{
