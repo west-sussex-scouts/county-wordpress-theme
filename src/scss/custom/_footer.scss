@@ -6,7 +6,7 @@ footer {
     @include respond-below('md') {
       font-size: 12px;
     }
-    color: theme-color('footer-grey');
+    color: $footer-grey;
     font-size: 13px;
     font-weight: 400;
   }

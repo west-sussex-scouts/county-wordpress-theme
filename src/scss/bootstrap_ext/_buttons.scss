@@ -18,16 +18,16 @@
 }
 
 .btn-scouts-purple {
-  @include button-variant($background: theme-color($key: 'scouts-purple'), $border: $white, $hover-background: $white);
+  @include button-variant($background: $scouts-purple, $border: $white, $hover-background: $white);
 
   &:hover {
-    color: theme-color('scouts-purple');
+    color: $scouts-purple;
   }
 }
 
 .btn-scouts-white-teal {
-  @include button-variant($background: $white, $border: $white, $hover-background: theme-color('scouts-teal'), $hover-border: theme-color('scouts-teal'));
-  color: theme-color('scouts-purple');
+  @include button-variant($background: $white, $border: $white, $hover-background: $scouts-teal, $hover-border: $scouts-teal);
+  color: $scouts-purple;
 
   &:hover {
     color: $white;
@@ -35,6 +35,11 @@
 }
 
 .btn-scouts-green {
-  $background: theme-color('scouts-green');
+  $background: $scouts-green;
   @include button-variant($background, $border: $white, $hover-background: lighten($background, 7.5%), $hover-border: lighten($background, 10%));
+}
+
+.btn-scouts-blue {
+  $background: $scouts-blue;
+  @include button-variant($background, $border: $background, $hover-background: lighten($background, 7.5%), $hover-border: lighten($background, 10%));
 }

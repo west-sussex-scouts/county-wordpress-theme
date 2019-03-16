@@ -1,40 +1,45 @@
 .scouts-purple {
-  border-color: theme-color($key: 'scouts-purple');
-  color: theme-color($key: 'scouts-purple');
+  border-color: $scouts-purple;
+  color: $scouts-purple;
 }
 
 .scouts-blue {
-  border-color: theme-color($key: 'scouts-blue');
-  color: theme-color($key: 'scouts-blue');
+  border-color: $scouts-blue;
+  color: $scouts-blue;
+}
+
+.scouts-yellow {
+  border-color: $scouts-yellow;
+  color: $black;
 }
 
 .scouts-teal {
-  border-color: theme-color($key: 'scouts-teal');
-  color: theme-color($key: 'scouts-teal');
+  border-color: $scouts-teal;
+  color: $scouts-teal;
 }
 
 .scouts-red {
-  border-color: theme-color($key: 'scouts-red');
-  color: theme-color($key: 'scouts-red');
+  border-color: $scouts-red;
+  color: $scouts-red;
 }
 
 .scouts-green {
-  border-color: theme-color($key: 'scouts-green');
-  color: theme-color($key: 'scouts-green');
+  border-color: $scouts-green;
+  color: $scouts-green;
 }
 
 .bg-scouts-blue {
-  background: theme-color($key: 'scouts-blue');
+  background: $scouts-blue;
   color: $white;
 }
 
 .bg-scouts-green {
-  background: theme-color($key: 'scouts-green');
+  background: $scouts-green;
   color: $white;
 }
 
 .bg-scouts-navy {
-  background: theme-color($key: 'scouts-navy');
+  background: $scouts-navy;
   color: $white;
 }
 
@@ -44,11 +49,16 @@
 }
 
 .bg-scouts-teal {
-  background: theme-color($key: 'scouts-teal');
+  background: $scouts-teal;
   color: $white;
 }
 
 .bg-scouts-purple {
-  background: theme-color($key: 'scouts-purple');
+  background: $scouts-purple;
   color: $white;
+}
+
+.bg-scouts-yellow {
+  background: $scouts-yellow;
+  color: $black;
 }
