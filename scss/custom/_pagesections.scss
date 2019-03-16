@@ -1,0 +1,73 @@
+
+.top-banner {
+  #top-banner-overlay {
+    @include respond-above("md") {
+      position: absolute;
+      bottom: 0;
+    }
+
+    p {
+      @include respond-above("lg") {
+        font-size: 18px;
+      }
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+  }
+
+  position: relative;
+}
+
+.quote-row {
+  h6 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.15em;
+    margin: 0 0 5px 0;
+
+    span {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  .author {
+    font-size: 25px;
+  }
+
+  img {
+    @media (min-width: 576px) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 280px;
+    }
+    @media (max-width: 576px) {
+      bottom: 0;
+      width: 150px;
+    }
+  }
+
+  padding-bottom: 0 !important;
+}
+
+.volunteers-section {
+  p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4em;
+  }
+}
+
+.welcome-section {
+  h1 {
+    font-size: 65px;
+    line-height: 1em;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}

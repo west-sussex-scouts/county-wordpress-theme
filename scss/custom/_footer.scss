@@ -1,0 +1,41 @@
+footer {
+  line-height: 20px;
+
+  a, span {
+    font-weight: 400;
+    color: #666666;
+    font-size: 13px;
+    @include respond-below("md") {
+      font-size: 12px;
+    }
+  }
+
+  h6 {
+    font-size: 15px;
+    padding: 0 0 7px 0;
+    border-bottom: 1px solid;
+    margin: 0 0 20px 0;
+  }
+
+  ul {
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  li {
+    list-style: none;
+    @include respond-below("lg") {
+      width: 100%;
+      margin: 0 5px 0 0;
+    }
+    @include respond-above("lg") {
+      &:nth-child(odd) {
+        margin: 0 5% 0 0;
+      }
+      float: left;
+      width: 47.5%;
+      margin: 0 0 5px 0;
+    }
+  }
+}
