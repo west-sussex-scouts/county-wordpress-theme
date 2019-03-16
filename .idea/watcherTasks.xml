@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ProjectTasksOptions">
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="$ProjectFileDir$/index.scss $ProjectFileDir$/index.css" />
+      <option name="arguments" value="$ProjectFileDir$/src/scss/index.scss $ProjectFileDir$/assets/css/index.css" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" />
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="scss" />
       <option name="immediateSync" value="true" />
       <option name="name" value="SCSS" />
-      <option name="output" value="$ProjectFileDir$/index.css:$ProjectFileDir$/index.css.map" />
+      <option name="output" value="$ProjectFileDir$/src/css/index.css:$ProjectFileDir$/assets/css/index.css.map" />
       <option name="outputFilters">
         <array />
       </option>
