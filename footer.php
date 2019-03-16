@@ -54,5 +54,5 @@
   </div>
 </footer>
 
-<script src="<?php echo get_bloginfo('template_directory'); ?>/dist/index.packed.js"></script>
+<script src="<?php echo get_bloginfo('template_directory'); ?>/dist/footer.js"></script>
 <?php wp_footer(); ?>
