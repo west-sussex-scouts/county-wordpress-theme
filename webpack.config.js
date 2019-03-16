@@ -1,24 +1,22 @@
 const webpack = require("webpack");
 const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+// const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = () => {
     return {
         entry: {
-            header: "header.js",
-            footer: "footer.js"
+            header: "./src/js/header.js",
+            footer: "./src/js/footer.js"
         },
         output: {
             // filename: ".packed.js",
-            path: path.resolve(__dirname, "dist"),
-            publicPath: "/dist"
+            path: path.resolve(__dirname, "assets", "js")
         },
         devtool: "source-map",
         plugins: [
-            new CleanWebpackPlugin(),
             new webpack.ProvidePlugin({
                 $: "jquery",
+                jQuery: "jquery",
                 Popper: ["popper.js", "default"],
                 Alert: "exports-loader?Alert!bootstrap/js/dist/alert",
                 Button: "exports-loader?Button!bootstrap/js/dist/button",
@@ -32,12 +30,6 @@ module.exports = () => {
                 Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
                 Util: "exports-loader?Util!bootstrap/js/dist/util"
             }),
-            new UglifyJsPlugin({
-                sourceMap: true,
-                uglifyOptions: {
-                    dead_code: true
-                }
-            })
         ],
         resolve: {
             extensions: [
