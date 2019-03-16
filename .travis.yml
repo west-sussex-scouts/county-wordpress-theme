@@ -7,3 +7,11 @@ install:
 script:
   - yarn run lint
   - yarn run build
+  - yarn run package
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: county-wordpress-theme.zip
+  skip_cleanup: true
+  on:
+    tags: true
