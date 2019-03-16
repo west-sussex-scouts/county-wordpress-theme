@@ -18,14 +18,8 @@
         add_action('wp_head', 'theme_slug_render_title');
     }
     ?>
-
-    <!-- Bootstrap core CSS -->
-<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css  " rel="stylesheet">-->
-      <link href="<?php echo get_bloginfo('template_directory'); ?>/index.css" rel="stylesheet">
-<!--    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700,800,900" rel="stylesheet">-->
-
     <!-- Custom styles for this template -->
-    <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
+    <link href="<?php echo get_bloginfo('template_directory'); ?>/index.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css"
           href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"/>
