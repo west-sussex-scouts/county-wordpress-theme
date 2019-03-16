@@ -7,10 +7,10 @@ install:
 script:
   - yarn run lint
   - yarn run build
-  - yarn run package
+  - '[ ! -z "${TRAVIS_TAG}" ] && yarn run package'
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
+  api_key: ${GITHUB_RELEASE_TOKEN}
   file: county-wordpress-theme.zip
   skip_cleanup: true
   on:
