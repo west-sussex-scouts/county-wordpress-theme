@@ -1,0 +1,41 @@
+.btn {
+  @extend .btn;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  min-width: 150px;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn-big {
+  padding: 12px 22px;
+}
+
+.btn-big-border {
+  border: 2px solid;
+}
+
+.btn-scouts-purple {
+  @include button-variant($background: theme-color($key: "scouts-purple"), $border: $white, $hover-background: $white);
+
+  &:hover {
+    color: theme-color("scouts-purple") !important;
+  }
+}
+
+.btn-scouts-white-teal {
+  @include button-variant($background: $white, $border: $white, $hover-background: theme-color("scouts-teal"), $hover-border: theme-color("scouts-teal"));
+  color: theme-color("scouts-purple") !important;
+
+  &:hover {
+    color: $white !important;
+  }
+}
+
+.btn-scouts-green {
+  $background: theme-color("scouts-green");
+  @include button-variant($background, $border: $white, $hover-background: lighten($background, 7.5%), $hover-border: lighten($background, 10%));
+}
