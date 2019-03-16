@@ -1,13 +1,15 @@
 
 .top-banner {
-  #top-banner-overlay {
-    @include respond-above("md") {
-      position: absolute;
+  position: relative;
+
+  .banner-overlay {
+    @include respond-above('md') {
       bottom: 0;
+      position: absolute;
     }
 
     p {
-      @include respond-above("lg") {
+      @include respond-above('lg') {
         font-size: 18px;
       }
     }
@@ -16,20 +18,20 @@
       font-size: 40px;
     }
   }
-
-  position: relative;
 }
 
 .quote-row {
+  padding-bottom: 0;
+
   h6 {
     font-size: 40px;
     font-weight: 800;
     line-height: 1.15em;
-    margin: 0 0 5px 0;
+    margin: 0 0 5px;
 
     span {
-      position: absolute;
       left: 0;
+      position: absolute;
     }
   }
 
@@ -39,9 +41,9 @@
 
   img {
     @media (min-width: 576px) {
+      bottom: 0;
       position: absolute;
       right: 0;
-      bottom: 0;
       width: 280px;
     }
     @media (max-width: 576px) {
@@ -49,8 +51,6 @@
       width: 150px;
     }
   }
-
-  padding-bottom: 0 !important;
 }
 
 .volunteers-section {

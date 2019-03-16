@@ -1,61 +1,54 @@
 .scouts-purple {
-  color: #7413dc;
-  border-color: #7413dc;
+  border-color: theme-color($key: 'scouts-purple');
+  color: theme-color($key: 'scouts-purple');
 }
 
 .scouts-blue {
-  color: #006ddf;
-  border-color: #006ddf;
+  border-color: theme-color($key: 'scouts-blue');
+  color: theme-color($key: 'scouts-blue');
 }
 
 .scouts-teal {
-  color: #00a794;
-  border-color: #00a794;
+  border-color: theme-color($key: 'scouts-teal');
+  color: theme-color($key: 'scouts-teal');
 }
 
 .scouts-red {
-  color: #e22e12;
-  border-color: #e22e12;
+  border-color: theme-color($key: 'scouts-red');
+  color: theme-color($key: 'scouts-red');
 }
 
 .scouts-green {
-  color: #23a950;
-  border-color: #23a950;
-}
-
-.bg-scouts-purple {
-  background: #7413dc;
-  color: #FFFFFF;
+  border-color: theme-color($key: 'scouts-green');
+  color: theme-color($key: 'scouts-green');
 }
 
 .bg-scouts-blue {
-  background: #006ddf;
-  color: #FFFFFF;
+  background: theme-color($key: 'scouts-blue');
+  color: $white;
 }
 
 .bg-scouts-green {
-  background: #23a950;
-  color: #FFFFFF;
+  background: theme-color($key: 'scouts-green');
+  color: $white;
 }
 
 .bg-scouts-navy {
-  background: #003982;
-  color: #FFFFFF;
+  background: theme-color($key: 'scouts-navy');
+  color: $white;
 }
 
 .bg-scouts-black {
-  background: #000000;
-  color: #FFFFFF;
+  background: $black;
+  color: $black;
 }
 
 .bg-scouts-teal {
-  background: #00a794;
-  color: #FFFFFF;
+  background: theme-color($key: 'scouts-teal');
+  color: $white;
 }
 
-.bg-scouts-purple a {
-  color: #FFFFFF;
-  &:visited {
-    color: #FFFFFF;
-  }
+.bg-scouts-purple {
+  background: theme-color($key: 'scouts-purple');
+  color: $white;
 }
