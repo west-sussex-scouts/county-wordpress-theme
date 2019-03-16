@@ -1,13 +1,12 @@
 .btn {
-  @extend .btn;
-  text-align: center;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  min-width: 150px;
   border-radius: 2px;
+  cursor: pointer;
   font-size: 16px;
   font-weight: 700;
+  min-width: 150px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
 }
 
 .btn-big {
@@ -19,23 +18,23 @@
 }
 
 .btn-scouts-purple {
-  @include button-variant($background: theme-color($key: "scouts-purple"), $border: $white, $hover-background: $white);
+  @include button-variant($background: theme-color($key: 'scouts-purple'), $border: $white, $hover-background: $white);
 
   &:hover {
-    color: theme-color("scouts-purple") !important;
+    color: theme-color('scouts-purple');
   }
 }
 
 .btn-scouts-white-teal {
-  @include button-variant($background: $white, $border: $white, $hover-background: theme-color("scouts-teal"), $hover-border: theme-color("scouts-teal"));
-  color: theme-color("scouts-purple") !important;
+  @include button-variant($background: $white, $border: $white, $hover-background: theme-color('scouts-teal'), $hover-border: theme-color('scouts-teal'));
+  color: theme-color('scouts-purple');
 
   &:hover {
-    color: $white !important;
+    color: $white;
   }
 }
 
 .btn-scouts-green {
-  $background: theme-color("scouts-green");
+  $background: theme-color('scouts-green');
   @include button-variant($background, $border: $white, $hover-background: lighten($background, 7.5%), $hover-border: lighten($background, 10%));
 }

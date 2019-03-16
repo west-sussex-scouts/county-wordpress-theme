@@ -7,7 +7,7 @@
              class="img-fluid" alt=""
              srcset="<?php echo get_template_directory_uri() . '/assets/images/stock/2-scouts-canoeing-2048.jpg'; ?> 2048w, <?php echo get_template_directory_uri() . '/assets/images/stock/2-scouts-canoeing-300.jpg'; ?> 300w, <?php echo get_template_directory_uri() . '/assets/images/stock/2-scouts-canoeing-768.jpg'; ?> 768w, <?php echo get_template_directory_uri() . '/assets/images/stock/2-scouts-canoeing-1024.jpg'; ?> 1024w, <?php echo get_template_directory_uri() . '/assets/images/stock/2-scouts-canoeing-1000.jpg'; ?> 1000w, <?php echo get_template_directory_uri() . '/assets/images/stock/2-scouts-canoeing-500.jpg'; ?> 500w, <?php echo get_template_directory_uri() . '/assets/images/stock/2-scouts-canoeing-600.jpg'; ?> 600w"
              sizes="(max-width: 2048px) 100vw, 2048px">
-        <div class="col-md-6 offset-md-1 banner bg-scouts-purple pt-2 pb-2 pl-4 pr-4 pt-md-5 pb-md-3 pl-md-5 pr-md-5 rounded"
+        <div class="col-md-6 offset-md-1 banner-overlay bg-scouts-purple pt-2 pb-2 pl-4 pr-4 pt-md-5 pb-md-3 pl-md-5 pr-md-5 rounded"
              id="top-banner-overlay">
             <h2>Skills for Life</h2>
             <p>As Scouts, we believe in preparing young people with Skills for Life. We encourage young people to do

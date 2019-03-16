@@ -1,17 +1,14 @@
 .navbar-brand {
-  @extend .navbar-brand;
 
   img {
-    max-width: 180px;
     max-height: 80px;
+    max-width: 180px;
   }
 }
 
 .navbar {
-  @extend .navbar;
-  -webkit-box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
-  box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
-  z-index: 1000;
-  min-height: 75px;
+  box-shadow: 0 5px 11px 0 rgba(50, 50, 50, .08);
   font-weight: 400;
+  min-height: 75px;
+  z-index: 1000;
 }
