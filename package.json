@@ -2,7 +2,8 @@
   "scripts": {
     "build": "sass src/scss/index.scss:assets/css/index.css --style compressed && webpack --mode=production",
     "watch": "sass src/scss/index.scss:assets/css/index.css --watch",
-    "lint": "sass-lint src/scss/**/*.scss"
+    "lint": "sass-lint src/scss/**/*.scss",
+    "package": "bash scripts/package.sh"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
