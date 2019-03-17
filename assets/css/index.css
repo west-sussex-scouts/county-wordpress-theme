@@ -6772,5 +6772,8 @@ footer li {
   font-size: 16px;
   font-weight: 800;
 }
+.sidebar .card .card-body.section-pages .current_page_item {
+  font-weight: 800;
+}
 
 /*# sourceMappingURL=index.css.map */

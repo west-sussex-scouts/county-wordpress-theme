@@ -14,19 +14,18 @@
             <div class="card-header bg-scouts-green">
                 More in this section
             </div>
-            <div class="card-body">
+            <div class="card-body section-pages">
 				<?php
-                $ancestors = get_post_ancestors($post->ID);
-                $root_ancestor = end($ancestors);
-                $pages_args = array(
-                        'child_of' => $root_ancestor,
-                );
-				$hierarchy = get_pages($pages_args);
-				foreach ( $hierarchy as $page ){
-				    print_r($page->post_title);
-                };
+				$ancestors     = get_post_ancestors( $post->ID );
+				$root_ancestor = end( $ancestors );
+				$pages_args    = array(
+					'child_of' => $root_ancestor,
+					'title_li' => '<a href="' . get_page_link($root_ancestor) . '">' . get_post($root_ancestor)->post_title . '</a>'
+				);
+				$hierarchy     = wp_list_pages( $pages_args );
+				print_r( $hierarchy );
 				?>
-<!--				--><?php //print_r( get_post_ancestors( 2 ) ) ?>
+                <!--				--><?php //print_r( get_post_ancestors( 2 ) ) ?>
             </div>
         </div>
     </div>
