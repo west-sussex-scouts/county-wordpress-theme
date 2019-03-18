@@ -3,3 +3,5 @@ node_modules
 .idea/tasks.xml
 .idea/dictionary/*.xml
 county-wordpress-theme.zip
+assets/css
+assets/js
