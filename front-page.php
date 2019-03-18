@@ -25,7 +25,7 @@
 <div class="container welcome-section pt-4 pb-3">
     <div class="row">
         <div class="col-md-7 col-sm-12">
-            <h1>Welcome to <br/><span class="scouts-teal"><?php echo get_bloginfo( 'name', 'raw' ) ?></span></h1>
+            <h1><span class="scouts-blue"><?php echo get_bloginfo( 'name', 'raw' ) ?></span></h1>
 			<?= get_post_field( 'post_content', $post->ID ) ?>
             <a href="/?page_id=<?= get_option( "welcome_fom_target" ) ?>" id="welcome_fom"
                class="btn btn-big btn-scouts-green mr-1">Find out more</a>
@@ -121,19 +121,6 @@
         <div class="col-lg-auto">
             <a href="/?page_id=<?= get_option( "av_fom_target" ) ?>" class="btn btn-big btn-scouts-green" id="av_fom">Find
                 out more</a>
-        </div>
-    </div>
-</div>
-<div class="container-flex">
-    <div class="row quote-row bg-scouts-blue pt-2">
-        <div class="col-lg-5 offset-lg-1 col-sm-8 bg-scouts-blue pb-1">
-            <h6><span>‘</span>Put your phone down and what are you left with? Just teamwork, courage and the skills to
-                succeed.’</h6>
-            <span class="author">Bear Grylls, Chief Scout</span>
-        </div>
-        <div class="col-lg-3 col-sm-4">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/bear_grylls.png'; ?>"
-                 alt="Bear Grylls Pointing">
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "sass src/scss/index.scss:assets/css/index.css --style compressed && webpack --mode=production",
+    "build": "sass src/scss/index.scss:assets/css/index.css --style compressed && webpack --mode=production && composer update",
     "watch": "sass src/scss/index.scss:assets/css/index.css --watch",
     "lint": "sass-lint src/scss/**/*.scss",
     "package": "bash scripts/package.sh"

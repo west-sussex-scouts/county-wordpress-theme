@@ -235,7 +235,7 @@ function add_homepage_settings_to_customizer( $wp_customize ) {
 add_action( 'customize_register', 'add_homepage_settings_to_customizer' );
 
 #Auto Update Functionality
-require 'inc/plugin-update-checker/plugin-update-checker.php';
+require 'vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/west-sussex-scouts/county-wordpress-theme',
 	__FILE__,
@@ -246,5 +246,6 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 #$myUpdateChecker->setAuthentication('your-token-here');
 
 //Optional: Set the branch that contains the stable release.
-$myUpdateChecker->setBranch( 'master' );
-require get_template_directory() . '/inc/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';
+//$myUpdateChecker->setBranch( 'master' );
+$myUpdateChecker->getVcsApi()->enableReleaseAssets("county-wordpress-theme.zip");
+require get_template_directory() . '/vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';

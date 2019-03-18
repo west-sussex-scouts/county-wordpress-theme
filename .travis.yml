@@ -11,7 +11,9 @@ script:
 deploy:
   provider: releases
   api_key: ${GITHUB_RELEASE_TOKEN}
-  file: county-wordpress-theme.zip
+  file:
+    - county-wordpress-theme.zip
+    - county-wordpress-theme.zip.sha256
   skip_cleanup: true
   on:
     tags: true

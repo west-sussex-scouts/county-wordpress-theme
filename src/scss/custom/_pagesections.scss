@@ -20,39 +20,6 @@
   }
 }
 
-.quote-row {
-  padding-bottom: 0;
-
-  h6 {
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 1.15em;
-    margin: 0 0 5px;
-
-    span {
-      left: 0;
-      position: absolute;
-    }
-  }
-
-  .author {
-    font-size: 25px;
-  }
-
-  img {
-    @media (min-width: 576px) {
-      bottom: 0;
-      position: absolute;
-      right: 0;
-      width: 280px;
-    }
-    @media (max-width: 576px) {
-      bottom: 0;
-      width: 150px;
-    }
-  }
-}
-
 .volunteers-section {
   p {
     font-size: 20px;

@@ -6,16 +6,87 @@
       line-height: 1.4em;
     }
   }
+
   .card {
     width: 100%;
+
     .card-header {
       text-align: center;
       font-size: 16px;
       font-weight: 800;
     }
-    .card-body.section-pages {
-      .current_page_item {
-        font-weight: 800;
+
+    .card-body {
+      &.section-pages {
+        ul {
+          list-style: none;
+          padding: 0 20px 0 20px;
+          margin: 0;
+
+          li {
+            position: relative;
+            font-size: 12px;
+            margin: 0 0 8px 10px;
+            font-weight: 400;
+
+            &.pagenav {
+              margin: 0 0 8px -5px;
+              color: $red;
+              &:before {
+                display: none !important;
+                content: none !important;
+              }
+            }
+
+            &.current_page_item {
+              font-weight: 800;
+            }
+
+            &.page_item_has_children {
+              margin: 0 0 10px 10px;
+
+              .children, .sub-menu {
+                position: relative;
+
+                li {
+                  &:nth-child(1) {
+                    margin: 0 0 8px 0;
+
+                    &:before {
+                      display: block;
+                      content: "-";
+                    }
+                  }
+                }
+              }
+            }
+
+            &:before {
+              content: "-";
+              position: absolute;
+              left: -15px;
+              color: $footer-grey;
+            }
+
+            a {
+              color: $footer-grey;
+
+              &:hover {
+                color: $scouts-green;
+              }
+            }
+
+            ul {
+              list-style-type: none;
+              margin-top: 8px;
+              padding: 0 0 0 15px;
+
+              li {
+                margin-left: 0;
+              }
+            }
+          }
+        }
       }
     }
   }
