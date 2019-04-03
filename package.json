@@ -27,7 +27,7 @@
         "webpack": "^4.29.6",
         "webpack-cli": "^3.3.0"
     },
-    "version": "1.0.11",
+    "version": "1.0.12",
     "name": "county-wordpress-theme",
     "license": "GPL-3.0-only"
 }

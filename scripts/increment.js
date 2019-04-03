@@ -30,43 +30,36 @@ function gitTag(version) {
     Git.pushTags('origin', {args: ['--force']});
 }
 
-const currentGitVersion = gitVersion();
+var currentGitVersion = gitVersion();
 console.log('Current Git version: ', currentGitVersion)
 const packageJsonVersion = process.env.npm_package_version;
 console.log('package.json version: ', packageJsonVersion)
-const gitPreRelease = semver.prerelease(currentGitVersion);
+var gitPreRelease = semver.prerelease(currentGitVersion);
 
 if (gitPreRelease ) {
     if ( gitPreRelease[0].match(/[0-9]*\.[0-9]*\.[0-9]*-.*-SNAPSHOT/) ) {
         if (! gitPreRelease.endsWith("HEAD-SNAPSHOT")) {
-            console.log("This is a branch - exitting.")
+            console.log("This is a branch - exiting.")
             process.exit()
         }
+        gitPreRelease = null;
+        currentGitVersion = semver.dec(currentGitVersion, 'patch')
     }
 }
+const newGitVersion = semver.major(currentGitVersion) + "." + semver.minor(currentGitVersion) + "." + semver.patch(currentGitVersion)
+const newPackageJsonVersion = semver.inc(packageJsonVersion, 'patch');
 
-if ( ! gitPreRelease ) {
-    console.log("Incrementing version to: " + currentGitVersion + " from: " + "git tag");
-    setPackageJsonVer(currentGitVersion);
-    setCssVer(currentGitVersion);
-    gitCommit(currentGitVersion);
-    gitTag(currentGitVersion)
-} else if ( gitPreRelease ) {
-    const currentGitVersionClean = semver.major(currentGitVersion) + "." + semver.minor(currentGitVersion) + "." + semver.patch(currentGitVersion)
-    const newPackageJsonVersion = semver.inc(packageJsonVersion, 'patch');
-    const newGitVersion = semver.inc(currentGitVersionClean, 'patch');
-    var newVersion = null;
-    const newVerComp = semver.compare(newGitVersion, newPackageJsonVersion);
-    if (newVerComp > 0) {
-        newVersion = newGitVersion;
-        console.log("Incrementing version to: " + newGitVersion + " from: " + "git");
-    } else {
-        newVersion = newPackageJsonVersion;
-        console.log("Incrementing version to: " + newPackageJsonVersion + " from: " + "package.json");
-    }
-    console.log(newVersion);
-    setPackageJsonVer(newVersion);
-    setCssVer(newVersion);
-    gitCommit(newVersion)
-    gitTag(newVersion);
+var newVersion = null;
+const newVerComp = semver.compare(newGitVersion, newPackageJsonVersion);
+if (newVerComp > 0) {
+    newVersion = newGitVersion;
+    console.log("Incrementing version to: " + newGitVersion + " from: " + "git");
+} else {
+    newVersion = newPackageJsonVersion;
+    console.log("Incrementing version to: " + newPackageJsonVersion + " from: " + "package.json");
 }
+console.log(newVersion);
+setPackageJsonVer(newVersion);
+setCssVer(newVersion);
+gitCommit(newVersion)
+gitTag(newVersion);
