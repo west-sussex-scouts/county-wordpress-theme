@@ -20,12 +20,10 @@ function setCssVer(version) {
 function gitCommit(version) {
     Git.add(['package.json', 'style.css'])
     Git.commit('Bump version to ' + version)
-    Git.push('origin')
+    Git.push('origin', 'HEAD:master')
 }
 
 function gitTag(version) {
-    const currentGitVersion = gitVersion()
-    const currentGitVersionClean = semver.major(currentGitVersion) + "." + semver.minor(currentGitVersion) + "." + semver.patch(currentGitVersion)
     Git.tag(['--force', 'v' + version])
     Git.pushTags('origin', {args: ['--force']});
 }
@@ -36,17 +34,18 @@ const packageJsonVersion = process.env.npm_package_version;
 console.log('package.json version: ', packageJsonVersion)
 var gitPreRelease = semver.prerelease(currentGitVersion);
 
+var newGitVersion = null;
 if (gitPreRelease ) {
     if ( gitPreRelease[0].match(/[0-9]*\.[0-9]*\.[0-9]*-.*-SNAPSHOT/) ) {
         if (! gitPreRelease.endsWith("HEAD-SNAPSHOT")) {
             console.log("This is a branch - exiting.")
             process.exit()
         }
-        gitPreRelease = null;
-        currentGitVersion = semver.dec(currentGitVersion, 'patch')
     }
+    newGitVersion = semver.major(currentGitVersion) + "." + semver.minor(currentGitVersion) + "." + semver.patch(currentGitVersion)
+} else {
+    newGitVersion = semver.inc(newGitVersion, 'patch')
 }
-const newGitVersion = semver.major(currentGitVersion) + "." + semver.minor(currentGitVersion) + "." + semver.patch(currentGitVersion)
 const newPackageJsonVersion = semver.inc(packageJsonVersion, 'patch');
 
 var newVersion = null;

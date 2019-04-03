@@ -1,20 +1,23 @@
----
 language: node_js
 node_js:
-  - "8"
+- '8'
 install:
-  - yarn install --dev
+- yarn install --dev
 script:
-  - yarn run lint
-  - yarn run build
-  - '[ ! -z "${TRAVIS_TAG}" ] && yarn run package || true'
-  - yarn run increment
+- yarn run lint
+- yarn run build
+- '[ ! -z "${TRAVIS_TAG}" ] && yarn run package || true'
+- "./scripts/ci-git-setup.sh"
+- yarn run increment
 deploy:
   provider: releases
-  api_key: ${GITHUB_RELEASE_TOKEN}
+  api_key: "${GH_TOKEN}"
   file:
-    - county-wordpress-theme.zip
-    - county-wordpress-theme.zip.sha256
+  - county-wordpress-theme.zip
+  - county-wordpress-theme.zip.sha256
   skip_cleanup: true
   on:
     tags: true
+env:
+  global:
+    secure: c7hDgH7QxqVTjtkVmCuYppt8upd42YRaSIhMR0ZTFoSNdRXYKYHGYZxQ/Cm5MneN0G65jUHbn5e8zNJaEeIlcPjU+EuLQk8SGbd6qlMk9RfxQsznEpx/GEa7Ri9/e2IwElVUYqxQqrmQyf7WkeDTSwwNvTjYD0i1O0zkuvZuQ1zKkDbkc3VXlRiwMdqWsM1vM+9RgsSWRViBkDquI3NlusBenv99SUwVg9yjQRAP/dB6thIym8IGXFh8GtH1Avvkiqz2Iqu7fGUL2Jd8jffnW8hHoo51fENpHqAwwDt+MUVaAKzPkU0K/02A6Ts8EqIqOtfI3DUOPbu2f0I8OmJdr7MWbXcAyOs3iD0SIZO44a59RE9eildMAO0p7X6nCPAHKtKhfE666cVEYIgrIeQjk2+5LvdopwgeGgvrSSgA0aNEi3A/cUvGAWvqqmufoWEnRCNzCZZZCNmlRMcPCcT0fKH6ER/lhk3riH39qLIC2gsZx7Fkc0sTzvQxHL06oNy98Voa6ALFswtqY2isyoeBk6IaZONqPOW09uPfatwisOq0hG1C9fxUrGVhIvRbPiBMM5s42/SA4mnNx2nf3jj+v6IPc+FLAvEVxfFF+P2CtAF8+oVowCDRQAOPYelINUPMdauXHam1sCO6aiFItnlmxpWqlugE56scnaIKHONxz/I=
