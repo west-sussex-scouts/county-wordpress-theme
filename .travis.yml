@@ -7,8 +7,6 @@ script:
 - yarn run lint
 - yarn run build
 - '[ ! -z "${TRAVIS_TAG}" ] && yarn run package || true'
-- "./scripts/ci-git-setup.sh"
-- yarn run increment
 deploy:
   provider: releases
   api_key: "${GH_TOKEN}"
