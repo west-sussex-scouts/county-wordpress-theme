@@ -20,12 +20,14 @@ function setCssVer(version) {
 function gitCommit(version) {
     Git.add(['package.json', 'style.css'])
     Git.commit('Bump version to ' + version)
+    Git.push('origin')
 }
 
 function gitTag(version) {
     const currentGitVersion = gitVersion()
     const currentGitVersionClean = semver.major(currentGitVersion) + "." + semver.minor(currentGitVersion) + "." + semver.patch(currentGitVersion)
     Git.tag(['--force', 'v' + version])
+    Git.pushTags('origin', {args: ['--force']});
 }
 
 const currentGitVersion = gitVersion();
@@ -34,12 +36,12 @@ const packageJsonVersion = process.env.npm_package_version;
 console.log('package.json version: ', packageJsonVersion)
 const gitPreRelease = semver.prerelease(currentGitVersion);
 
-// if (gitPreRelease ) {
-//     if (gitPreRelease[0] != "SNAPSHOT" ) {
-//         console.log("This is a branch - exitting.")
-//         process.exit()
-//     }
-// }
+if (gitPreRelease ) {
+    if (gitPreRelease[0] != "SNAPSHOT" ) {
+        console.log("This is a branch - exitting.")
+        process.exit()
+    }
+}
 
 if ( ! gitPreRelease ) {
     console.log("Incrementing version to: " + currentGitVersion + " from: " + "git tag");

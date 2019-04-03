@@ -8,6 +8,7 @@ script:
   - yarn run lint
   - yarn run build
   - '[ ! -z "${TRAVIS_TAG}" ] && yarn run package || true'
+  - yarn run increment
 deploy:
   provider: releases
   api_key: ${GITHUB_RELEASE_TOKEN}
