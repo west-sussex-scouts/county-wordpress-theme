@@ -1,27 +1,32 @@
 {
-  "scripts": {
-    "build": "sass src/scss/index.scss:assets/css/index.css --style compressed && webpack --mode=production && composer update",
-    "watch": "sass src/scss/index.scss:assets/css/index.css --watch",
-    "lint": "sass-lint src/scss/**/*.scss",
-    "package": "bash scripts/package.sh"
-  },
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "cookieconsent": "^3.1.0",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.14.7"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "babel-loader": "^8.0.5",
-    "babel-preset-env": "^1.7.0",
-    "clean-webpack-plugin": "^2.0.1",
-    "exports-loader": "^0.7.0",
-    "path": "^0.12.7",
-    "sass": "^1.17.3",
-    "sass-lint": "^1.12.1",
-    "uglifyjs-webpack-plugin": "^2.1.2",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
-  }
+    "scripts": {
+        "build": "sass src/scss/index.scss:assets/css/index.css --style compressed && webpack --mode=production && composer update",
+        "watch": "sass src/scss/index.scss:assets/css/index.css --watch",
+        "lint": "sass-lint src/scss/**/*.scss",
+        "package": "bash scripts/package.sh",
+        "increment": "node scripts/increment.js"
+    },
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "cookieconsent": "^3.1.0",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.7"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "babel-loader": "^8.0.5",
+        "babel-preset-env": "^1.7.0",
+        "clean-webpack-plugin": "^2.0.1",
+        "exports-loader": "^0.7.0",
+        "git-tag-version": "^1.3.1",
+        "path": "^0.12.7",
+        "sass": "^1.17.3",
+        "sass-lint": "^1.12.1",
+        "uglifyjs-webpack-plugin": "^2.1.2",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0"
+    },
+    "version": "1.0.11",
+    "name": "county-wordpress-theme",
+    "license": "GPL-3.0-only"
 }
