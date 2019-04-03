@@ -1,0 +1,24 @@
+business logic:
+
+If tagged:
+    If master:
+        SOT Version: tag version (minus leading 'v')
+        set theme version and package.json to SOT
+        If different:
+            Remove tag
+            Push removal
+            Commit working dir
+            Tag
+            Push all
+        If same:
+            noop
+    If not master:
+        noop
+
+If not tagged:
+    If master:
+        Increment current package.json version
+        Set theme version to ^
+        Commit
+        Tag to package.json version
+        Push all
