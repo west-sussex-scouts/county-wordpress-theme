@@ -20,7 +20,7 @@
         "exports-loader": "^0.7.0",
         "git-tag-version": "^1.3.1",
         "path": "^0.12.7",
-        "sass": "^1.17.3",
+        "sass": "^1.17.4",
         "sass-lint": "^1.12.1",
         "simple-git": "^1.110.0",
         "uglifyjs-webpack-plugin": "^2.1.2",
