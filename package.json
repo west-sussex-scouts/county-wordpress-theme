@@ -25,7 +25,7 @@
         "simple-git": "^1.110.0",
         "uglifyjs-webpack-plugin": "^2.1.2",
         "webpack": "^4.29.6",
-        "webpack-cli": "^3.3.0"
+        "webpack-cli": "^3.3.1"
     },
     "version": "1.0.14",
     "name": "county-wordpress-theme",
