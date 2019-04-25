@@ -21,7 +21,7 @@
         "git-tag-version": "^1.3.1",
         "path": "^0.12.7",
         "sass": "^1.19.0",
-        "sass-lint": "^1.12.1",
+        "sass-lint": "^1.13.0",
         "simple-git": "^1.110.0",
         "uglifyjs-webpack-plugin": "^2.1.2",
         "webpack": "^4.30.0",
