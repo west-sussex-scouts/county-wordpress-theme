@@ -24,7 +24,7 @@
         "sass-lint": "^1.13.1",
         "simple-git": "^1.113.0",
         "uglifyjs-webpack-plugin": "^2.1.3",
-        "webpack-cli": "^3.3.2",
+        "webpack-cli": "^3.3.3",
         "webpack": "^4.33.0"
     },
     "version": "1.0.15",
