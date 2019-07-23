@@ -1,0 +1,93 @@
+meta:
+  containers:
+    node: &node-image-resource
+      type: docker-image
+      source: &node-image-resource-source
+        repository: node
+        tag: 8.16.0-stretch
+
+jobs:
+  - name: init-pipeline
+    serial: true
+    plan:
+      - get: county-wordpress-theme
+        trigger: true
+      - get: version
+      - task: init-pipeline-pool
+        config:
+          platform: linux
+          image_resource: *node-image-resource
+          run:
+            path: sh
+            args:
+              - -e
+              - -c
+              - |
+                exit 0
+
+  - name: test
+    plan:
+      - get: county-wordpress-theme
+        trigger: true
+        passed: [ init-pipeline ]
+      - get: version
+        passed: [ init-pipeline ]
+      - task: update-node-modules
+        config:
+          platform: linux
+          image_resource: *node-image-resource
+          outputs:
+            - name: node_modules
+          run:
+            path: sh
+            args:
+              - -e
+              - -c
+              - |
+                cd county-wordpress-theme
+                yarn install --dev --modules-folder ../node_modules
+
+      - task: lint
+        config:
+          platform: linux
+          image_resource: *node-image-resource
+          inputs:
+            - name: node_modules
+          run:
+            path: sh
+            args:
+              - -e
+              - -c
+              - |
+                cd county-wordpress-theme
+                yarn --modules-folder ../node_modules run lint
+
+  - name: build
+    plan:
+      - get: county-wordpress-theme
+        passed: [ test ]
+      - get: version
+        passed: [ test ]
+        trigger: true
+
+resources:
+  - name: county-wordpress-theme
+    icon: git
+    type: git
+    source:
+      uri: git@github.com:west-sussex-scouts/county-wordpress-theme.git
+      branch: master
+      private_key: |
+        ((concourse-ssh-key.id_rsa))
+
+  - name: version
+    icon: alpha-v
+    type: semver
+    source:
+      bucket: concourse.((version_bucket.name))
+      key: county-wordpress-theme.version
+      initial_version: 1.0.15
+      region_name: ((version_bucket.region))
+      access_key_id: ((aws-s3.access_key_id))
+      secret_access_key: ((aws-s3.secret_access_key))
+      server_side_encryption: AES256
