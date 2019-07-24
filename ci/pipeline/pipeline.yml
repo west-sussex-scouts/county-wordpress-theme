@@ -3,82 +3,163 @@ meta:
     node: &node-image-resource
       type: docker-image
       source: &node-image-resource-source
-        repository: node
-        tag: 8.16.0-stretch
+        repository: westsussexscouts/docker-node-composer
+        tag: latest
 
 jobs:
-  - name: init-pipeline
-    serial: true
+  - name: cache
     plan:
       - get: county-wordpress-theme
         trigger: true
-      - get: version
-      - task: init-pipeline-pool
-        config:
-          platform: linux
-          image_resource: *node-image-resource
-          run:
-            path: sh
-            args:
-              - -e
-              - -c
-              - |
-                exit 0
+      - get: npm-repo-cache
 
   - name: test
     plan:
       - get: county-wordpress-theme
+        passed: [cache]
         trigger: true
-        passed: [ init-pipeline ]
-      - get: version
-        passed: [ init-pipeline ]
-      - task: update-node-modules
-        config:
-          platform: linux
-          image_resource: *node-image-resource
-          outputs:
-            - name: node_modules
-          run:
-            path: sh
-            args:
-              - -e
-              - -c
-              - |
-                cd county-wordpress-theme
-                yarn install --dev --modules-folder ../node_modules
-
+      - get: npm-repo-cache
+        passed: [cache]
       - task: lint
         config:
           platform: linux
           image_resource: *node-image-resource
           inputs:
-            - name: node_modules
+            - name: county-wordpress-theme
+              path: /src
+            # - name: node_modules
+            - name: npm-repo-cache
+              path: /cache
           run:
             path: sh
             args:
-              - -e
-              - -c
+              - -exc
               - |
-                cd county-wordpress-theme
-                yarn --modules-folder ../node_modules run lint
+                mv cache/node_modules src
+                cd src && yarn run lint
 
   - name: build
     plan:
       - get: county-wordpress-theme
+        trigger: true
+        passed: [ test ]
+      - get: npm-repo-cache
         passed: [ test ]
       - get: version
-        passed: [ test ]
-        trigger: true
+        params:
+          bump: minor
+      - task: build
+        config:
+          platform: linux
+          image_resource: *node-image-resource
+          inputs:
+            - name: county-wordpress-theme
+              path: /src
+            - name: npm-repo-cache
+              path: /cache
+          run:
+            path: sh
+            args:
+              - -exc
+              - |
+                mv cache/node_modules src
+                cd src && yarn run build
+          outputs:
+            - name: county-wordpress-theme-built
+              path: /src
+      - task: bump_package_version
+        config:
+          platform: linux
+          image_resource: *node-image-resource
+          inputs:
+            - name: county-wordpress-theme-built
+              path: /src
+            - name: version
+          run:
+            path: sh
+            args:
+              - -exc
+              - |
+                NEW_VERSION="$(cat version/version)"
+                cd src
+                yarn version --new-version ${NEW_VERSION} --no-git-tag-version
+                sed -i 's/Version: .*/Version: aaa/' style.css
+                git config --global user.email "concourse@westsussexscouts.org.uk"
+                git config --global user.name "Concourse"
+                git add package.json style.css
+                git commit -F- <<EOM
+                [CI] Updated to v${NEW_VERSION}
+
+
+                [skip ci]
+                EOM
+          outputs:
+            - name: county-wordpress-theme-bumped
+              path: /src
+
+      - task: package
+        config:
+          platform: linux
+          image_resource: *node-image-resource
+          inputs:
+            - name: county-wordpress-theme-bumped
+              path: /src
+          run:
+            path: sh
+            args:
+              - -exc
+              - |
+                cd src && yarn run package
+                mv county-wordpress-theme.zip* ../artifacts
+          outputs:
+            - name: artifacts
+
+      - put: county-wordpress-theme
+        params:
+          repository: county-wordpress-theme-bumped
+          tag: version/version
+          tag_prefix: v
+
+      - put: county-wordpress-theme-release
+        params:
+          name: version/version
+          tag: version/version
+          tag_prefix: v
+          globs: [ artifacts/* ]
+      - put: version
+        params: {file: version/version}
+
+resource_types:
+  - name: npm-cache
+    type: docker-image
+    source: {repository: ymedlop/npm-cache-resource, tag: "8"}
 
 resources:
   - name: county-wordpress-theme
     icon: git
     type: git
-    source:
+    source: &repo-source
       uri: git@github.com:west-sussex-scouts/county-wordpress-theme.git
       branch: master
       private_key: |
         ((concourse-ssh-key.id_rsa))
+
+  - name: county-wordpress-theme-release
+    icon: github-box
+    type: github-release
+    source:
+      owner: west-sussex-scouts
+      repository: county-wordpress-theme
+      access_token: ((release-token.token))
+
+  - name: npm-repo-cache
+    icon: nodejs
+    type: npm-cache # as defined above
+    source:
+      <<: *repo-source
+      yarn-support: true
+      paths:
+        - package.json
 
   - name: version
     icon: alpha-v
