@@ -91,7 +91,7 @@ jobs:
                 [CI] Updated to v${NEW_VERSION}
 
 
-                [skip ci]
+                [ci skip]
                 EOM
           outputs:
             - name: county-wordpress-theme-bumped
@@ -114,7 +114,7 @@ jobs:
           outputs:
             - name: artifacts
 
-      - put: county-wordpress-theme
+      - put: county-wordpress-theme-put
         params:
           repository: county-wordpress-theme-bumped
           tag: version/version
@@ -144,6 +144,15 @@ resources:
       private_key: |
         ((concourse-ssh-key.id_rsa))
 
+  - name: county-wordpress-theme-put
+    icon: git
+    type: git
+    source: &repo-source
+      uri: git@github.com:west-sussex-scouts/county-wordpress-theme.git
+      branch: master
+      private_key: |
+        ((concourse-ssh-key.id_rsa))
+
   - name: county-wordpress-theme-release
     icon: github-box
     type: github-release
@@ -165,7 +174,7 @@ resources:
     icon: alpha-v
     type: semver
     source:
-      bucket: concourse.((version_bucket.name))
+      bucket: ((version_bucket.name))
       key: county-wordpress-theme.version
       initial_version: 1.0.15
       region_name: ((version_bucket.region))
