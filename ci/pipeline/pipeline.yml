@@ -165,7 +165,7 @@ resources:
     icon: alpha-v
     type: semver
     source:
-      bucket: concourse.((version_bucket.name))
+      bucket: ((version_bucket.name))
       key: county-wordpress-theme.version
       initial_version: 1.0.15
       region_name: ((version_bucket.region))
