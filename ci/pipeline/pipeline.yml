@@ -83,7 +83,7 @@ jobs:
                 NEW_VERSION="$(cat version/version)"
                 cd src
                 yarn version --new-version ${NEW_VERSION} --no-git-tag-version
-                sed -i 's/Version: .*/Version: aaa/' style.css
+                sed -i "s/Version: .*/Version: ${NEW_VERSION}/" style.css
                 git config --global user.email "concourse@westsussexscouts.org.uk"
                 git config --global user.name "Concourse"
                 git add package.json style.css
