@@ -67,6 +67,7 @@ jobs:
           outputs:
             - name: county-wordpress-theme-built
               path: /src
+
       - task: bump_package_version
         config:
           platform: linux
@@ -132,7 +133,7 @@ jobs:
 resource_types:
   - name: npm-cache
     type: docker-image
-    source: {repository: ymedlop/npm-cache-resource, tag: "8"}
+    source: {repository: ymedlop/npm-cache-resource, tag: "10"}
 
 resources:
   - name: county-wordpress-theme
