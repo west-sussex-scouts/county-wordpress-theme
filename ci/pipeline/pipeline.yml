@@ -148,11 +148,8 @@ resources:
   - name: county-wordpress-theme-put
     icon: git
     type: git
-    source: &repo-source
-      uri: git@github.com:west-sussex-scouts/county-wordpress-theme.git
-      branch: master
-      private_key: |
-        ((concourse-ssh-key.id_rsa))
+    source:
+      <<: *repo-source
 
   - name: county-wordpress-theme-release
     icon: github-box
