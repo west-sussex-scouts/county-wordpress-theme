@@ -171,11 +171,13 @@ resources:
   - name: version
     icon: alpha-v
     type: semver
-    source:
+    source: &version-repo-source
+      driver: git
+      uri: git@github.com:west-sussex-scouts/county-wordpress-theme.git
+      branch: version
+      file: county-wordpress-theme.version
+      private_key: |
+        ((concourse-ssh-key.id_rsa))
       bucket: ((version_bucket.name))
-      key: county-wordpress-theme.version
-      initial_version: 1.0.15
-      region_name: ((version_bucket.region))
-      access_key_id: ((aws-s3.access_key_id))
-      secret_access_key: ((aws-s3.secret_access_key))
-      server_side_encryption: AES256
+      git_user: "Concourse <concourse@westsussexscouts.org.uk>"
+      initial_version: 1.7.0
