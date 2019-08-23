@@ -45,9 +45,63 @@ jobs:
         passed: [ test ]
       - get: npm-repo-cache
         passed: [ test ]
-      - get: version
-        params:
-          bump: minor
+      - try:
+          task: whodunit
+          config:
+            platform: linux
+            image_resource: *node-image-resource
+            inputs:
+              - name: county-wordpress-theme
+                path: /src
+            run:
+              path: sh
+              args:
+                - -exc
+                - |
+                  grep -q dependabot src/.git/committer
+          on_failure:
+            do:
+            - get: version-minor
+              resource: version
+              params:
+                bump: minor
+            - task: set-minor-version
+              config:
+                platform: linux
+                image_resource: *node-image-resource
+                inputs:
+                - name: version-minor
+                  path: /version
+                run:
+                  path: sh
+                  args:
+                    - -exc
+                    - echo
+                outputs:
+                - name: version
+                  path: /version
+          on_success:
+            do:
+            - get: version-patch
+              resource: version
+              params:
+                bump: patch
+            - task: set-patch-version
+              config:
+                platform: linux
+                image_resource: *node-image-resource
+                inputs:
+                - name: version-patch
+                  path: /version
+                run:
+                  path: sh
+                  args:
+                    - -exc
+                    - echo
+                outputs:
+                - name: version
+                  path: /version
+
       - task: build
         config:
           platform: linux
@@ -178,6 +232,5 @@ resources:
       file: county-wordpress-theme.version
       private_key: |
         ((concourse-ssh-key.id_rsa))
-      bucket: ((version_bucket.name))
       git_user: "Concourse <concourse@westsussexscouts.org.uk>"
       initial_version: 1.7.0
