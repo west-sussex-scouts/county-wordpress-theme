@@ -23,7 +23,7 @@
         "sass-lint": "^1.13.1",
         "simple-git": "^1.126.0",
         "uglifyjs-webpack-plugin": "^2.2.0",
-        "webpack": "^4.40.1",
+        "webpack": "^4.40.2",
         "webpack-cli": "^3.3.8"
     },
     "version": "1.11.8",
