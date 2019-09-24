@@ -248,5 +248,5 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 //Optional: Set the branch that contains the stable release.
 //$myUpdateChecker->setBranch( 'master' );
 // $myUpdateChecker->getVcsApi()->enableReleaseAssets("county-wordpress-theme.zip");
-$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+$myUpdateChecker->getVcsApi()->enableReleaseAssets('.*\.zip');
 require get_template_directory() . '/vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';
