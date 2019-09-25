@@ -241,12 +241,6 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	__FILE__,
 	'county-wordpress-theme'
 );
-
-#//Optional: If you're using a private repository, specify the access token like this:
-#$myUpdateChecker->setAuthentication('your-token-here');
-
-//Optional: Set the branch that contains the stable release.
-//$myUpdateChecker->setBranch( 'master' );
-// $myUpdateChecker->getVcsApi()->enableReleaseAssets("county-wordpress-theme.zip");
 $myUpdateChecker->getVcsApi()->enableReleaseAssets('/.*\.zip/');
-require get_template_directory() . '/vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';
+
+require 'vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';
