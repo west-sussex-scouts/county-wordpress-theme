@@ -62,3 +62,17 @@
   background: $scouts-yellow;
   color: $black;
 }
+
+.nav-link:hover {
+  color: $scouts-purple !important;
+  text-decoration: underline;
+}
+.navbar-light-inverted-item > .nav-link {
+  background: $scouts-purple;
+  color: $white !important;
+}
+
+.navbar-light-inverted-item > .nav-link:hover {
+  color: #e6d0ff !important;
+  text-decoration: none;
+}
