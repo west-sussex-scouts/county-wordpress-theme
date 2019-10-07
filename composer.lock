@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f9b1934fb89494503c891d756fd4249",
+    "content-hash": "2017779b105858ca7d62f4b9f7352956",
     "packages": [
         {
             "name": "yahnis-elsts/plugin-update-checker",
-            "version": "v4.7",
+            "version": "v4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/YahnisElsts/plugin-update-checker.git",
-                "reference": "6da68b119277a400fad0ca6ec54f223b10bd8230"
+                "reference": "8ad3ff27698473accf51470ce46679c37279fa5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/6da68b119277a400fad0ca6ec54f223b10bd8230",
-                "reference": "6da68b119277a400fad0ca6ec54f223b10bd8230",
+                "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/8ad3ff27698473accf51470ce46679c37279fa5c",
+                "reference": "8ad3ff27698473accf51470ce46679c37279fa5c",
                 "shasum": ""
             },
             "require": {
@@ -25,9 +25,12 @@
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "plugin-update-checker.php"
-                ]
+                "psr-0": {
+                    "Puc_v4p8_": "",
+                    "Puc_v4_": "",
+                    "PucReadmeParser": "vendor/",
+                    "Parsedown": "vendor/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -49,7 +52,7 @@
                 "theme updates",
                 "wordpress"
             ],
-            "time": "2019-07-05T18:39:53+00:00"
+            "time": "2019-10-03T09:37:04+00:00"
         }
     ],
     "packages-dev": [],
