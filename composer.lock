@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2017779b105858ca7d62f4b9f7352956",
+    "content-hash": "d94deedd99000393ee740979381304b9",
     "packages": [
         {
             "name": "yahnis-elsts/plugin-update-checker",
-            "version": "v4.8",
+            "version": "v4.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/YahnisElsts/plugin-update-checker.git",
-                "reference": "8ad3ff27698473accf51470ce46679c37279fa5c"
+                "reference": "908249c92e81c46cb66e4d81632c5e917dc879ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/8ad3ff27698473accf51470ce46679c37279fa5c",
-                "reference": "8ad3ff27698473accf51470ce46679c37279fa5c",
+                "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/908249c92e81c46cb66e4d81632c5e917dc879ae",
+                "reference": "908249c92e81c46cb66e4d81632c5e917dc879ae",
                 "shasum": ""
             },
             "require": {
@@ -25,12 +25,9 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Puc_v4p8_": "",
-                    "Puc_v4_": "",
-                    "PucReadmeParser": "vendor/",
-                    "Parsedown": "vendor/"
-                }
+                "files": [
+                    "load-v4p8.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -52,7 +49,7 @@
                 "theme updates",
                 "wordpress"
             ],
-            "time": "2019-10-03T09:37:04+00:00"
+            "time": "2019-10-08T12:15:30+00:00"
         }
     ],
     "packages-dev": [],
