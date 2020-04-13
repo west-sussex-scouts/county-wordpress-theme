@@ -45,31 +45,32 @@
         </div>
     </div>
 </div>
-<div class="container volunteers-section pb-4">
-    <hr/>
-    <div class="row pt-3">
-        <div class="col-lg-3">
-            <h3>Adult volunteers</h3>
-        </div>
-        <div class="col-lg-5">
-            <p>The Scouts award-winning training scheme for volunteers means that adults get as much from Scouts as
-                young people.</p>
-        </div>
-        <div class="col-lg-auto">
-            <a href="/?page_id=<?= get_option( "av_fom_target" ) ?>" class="btn btn-big btn-scouts-green" id="av_fom">Find
-                out more</a>
-        </div>
-    </div>
-</div>
-<div class="container online-safety-section pb-4 bg-scouts-yellow">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="row"><h4>Young People in Scouting</h4></div>
-            <div class="row"><p>Wherever we go and whatever we do, we put young people’s safety and wellbeing first.</p></div>
-            <div class="row links-format-black"><a href="https://www.scouts.org.uk/information-for-parents/stay-safe"><h4>Find out more</h4></a></div>
-        </div>
-        <div class="col-md-6">
-            <div class="row links-format-black"><a href="https://www.scouts.org.uk/information-for-parents/stay-safe"><h4>Safety Training</h4></a></div>
+<div class="container front-page-card-deck-container">
+    <div class="row justify-content-md-center pt-md-4">
+        <div class="col-md-12">
+            <div class="card-deck front-page-card-deck">
+                <div class="card mb-4 text-center section-card">
+                    <a href="/?page_id=<?= get_option( "av_fom_target" ) ?>">
+                        <div class="card-body bg-scouts-blue align-self-center">
+                            <h5 class="card-title">Adult Volunteers</h5>
+                            <p class="card-text">The Scouts award-winning training scheme for volunteers means that adults get as much from Scouts as young people.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span>Find out More</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-100 d-none d-sm-block d-md-block d-lg-none"><!-- wrap every 2 on md--></div>
+                <div class="card mb-4 text-center section-card">
+                    <div class="card-body bg-scouts-yellow align-self-center">
+                        <h5 class="card-title">Young people first: Safeguarding and Safety in Scouting</h5>
+                        <p class="card-text">Wherever we go and whatever we do, we put young people’s safety and wellbeing first.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Find out More</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

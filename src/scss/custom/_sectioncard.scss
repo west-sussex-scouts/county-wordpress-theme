@@ -1,6 +1,5 @@
 .section-card {
   transition: transform 0.2s;
-
   h5 {
     font-size: 30px;
     font-weight: 800;
@@ -11,10 +10,11 @@
   }
 
   .card-body {
-    height: 135px;
+    height: 225px;
   }
 
   .card-footer {
+    padding: 10px;
     color: $black;
     font-weight: 700;
   }
