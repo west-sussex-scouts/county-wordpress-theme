@@ -68,6 +68,35 @@ function add_charity_number_to_customizer( $wp_customize ) {
 
 add_action( 'customize_register', 'add_charity_number_to_customizer' );
 
+function add_front_page_message_to_customizer( $wp_customize ) {
+	$wp_customize->add_setting(
+		'front_page_message',
+		array(
+			'default'    => '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'front_page_message',
+		array(
+			'label'       => __( 'Front Page Message', 'textdomain' ),
+			'description' => __( 'Message to appear on the front page', 'textdomain' ),
+			'settings'    => 'front_page_message',
+			'priority'    => 10,
+			'section'     => 'title_tagline',
+			'type'        => 'text',
+		)
+	) );
+	$wp_customize->selective_refresh->add_partial( 'front_page_message', array(
+		'selector'        => '#front_page_message',
+		'render_callback' => 'front_page_message',
+	) );
+}
+
+add_action( 'customize_register', 'front_page_message' );
+
 function add_social_media_to_customizer( $wp_customize ) {
 	$wp_customize->add_section( 'social_media', array(
 		'title'    => __( 'Social Media Info', 'scoutstheme' ),

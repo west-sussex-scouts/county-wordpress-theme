@@ -1,15 +1,14 @@
-
 .top-banner {
   position: relative;
 
   .banner-overlay {
-    @include respond-above('md') {
+    @include respond-above("md") {
       bottom: 0;
       position: absolute;
     }
 
     p {
-      @include respond-above('lg') {
+      @include respond-above("lg") {
         font-size: 18px;
       }
     }
@@ -29,6 +28,8 @@
 }
 
 .welcome-section {
+  min-height: 400px;
+  max-height: 600px;
   h1 {
     font-size: 65px;
     line-height: 1em;
@@ -37,4 +38,41 @@
   p {
     font-size: 18px;
   }
+}
+
+.welcome-section-image {
+  object-fit: cover;
+  max-height: 600px;
+  width: 100%;
+}
+
+.welcome-section-block {
+  position: relative;
+}
+
+.welcome-section-info {
+  position: absolute;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 300px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 75%;
+  padding: 2px;
+}
+
+.welcome-section-info-message {
+  margin-left: 2px;
+}
+
+.welcome-section-info-sections {
+  margin-left: 2px;
+}
+
+.online-safety-section {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
