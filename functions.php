@@ -95,7 +95,36 @@ function add_front_page_message_to_customizer( $wp_customize ) {
 	) );
 }
 
-add_action( 'customize_register', 'front_page_message' );
+add_action( 'customize_register', 'add_front_page_message_to_customizer' );
+
+function add_front_page_announcement_to_customizer( $wp_customize ) {
+	$wp_customize->add_setting(
+		'front_page_announcement',
+		array(
+			'default'    => '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'front_page_announcement',
+		array(
+			'label'       => __( 'Front Page Announcement', 'textdomain' ),
+			'description' => __( 'Announcement to appear as a banner at the top of the homepage', 'textdomain' ),
+			'settings'    => 'front_page_announcement',
+			'priority'    => 10,
+			'section'     => 'title_tagline',
+			'type'        => 'text',
+		)
+	) );
+	$wp_customize->selective_refresh->add_partial( 'front_page_announcement', array(
+		'selector'        => '#front_page_announcement',
+		'render_callback' => 'front_page_announcement',
+	) );
+}
+
+add_action( 'customize_register', 'add_front_page_announcement_to_customizer' );
 
 function add_social_media_to_customizer( $wp_customize ) {
 	$wp_customize->add_section( 'social_media', array(
