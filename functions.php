@@ -210,12 +210,6 @@ function add_homepage_settings_to_customizer( $wp_customize ) {
 			'selector'     => '#welcome_fom'
 		),
 		array(
-			'setting_name' => 'welcome_jt_target',
-			'label'        => 'Welcome > Join Today',
-			'description'  => 'Page that "Join Today" link in "Welcome" points to',
-			'selector'     => '#welcome_jt'
-		),
-		array(
 			'setting_name' => 'section_beavers_target',
 			'label'        => 'Sections > Beavers',
 			'description'  => 'Page that "Beavers" button in Sections list points to',
@@ -250,6 +244,12 @@ function add_homepage_settings_to_customizer( $wp_customize ) {
 			'label'        => 'Adult Volunteers > Find Out More',
 			'description'  => 'Page that "Find Out More" link in "Adult Volunteers" points to',
 			'selector'     => '#av_fom'
+		),
+		array(
+			'setting_name' => 'safeguarding_from_target',
+			'label'        => 'Safe Guarding > Find Out More',
+			'description'  => 'Page that "Find out more " link in "Safe Guarding" points to',
+			'selector'     => '#safeguarding_from'
 		),
 	];
 

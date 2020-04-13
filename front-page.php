@@ -62,13 +62,15 @@
                 </div>
                 <div class="w-100 d-none d-sm-block d-md-block d-lg-none"><!-- wrap every 2 on md--></div>
                 <div class="card mb-4 text-center section-card">
-                    <div class="card-body bg-scouts-yellow align-self-center">
-                        <h5 class="card-title">Young people first: Safeguarding and Safety in Scouting</h5>
-                        <p class="card-text">Wherever we go and whatever we do, we put young people’s safety and wellbeing first.</p>
-                    </div>
-                    <div class="card-footer">
-                        <span>Find out More</span>
-                    </div>
+                    <a href="/?page_id=<?= get_option( "safeguarding_from_target" ) ?>">
+                        <div class="card-body bg-scouts-yellow align-self-center">
+                            <h5 class="card-title">Young people first: Safeguarding and Safety in Scouting</h5>
+                            <p class="card-text">Wherever we go and whatever we do, we put young people’s safety and wellbeing first.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span>Find out More</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
