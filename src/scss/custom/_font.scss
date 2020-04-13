@@ -21,3 +21,39 @@ p {
   font-size: 18px;
   margin-left: 5px;
 }
+
+.links-format-white {
+  a {
+    text-decoration: none;
+  }
+
+  a:link {
+    color: white;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+  a:hover {
+    color: $scouts-blue;
+  }
+}
+
+.links-format-black {
+  a {
+    text-decoration: none;
+  }
+
+  a:link {
+    color: black;
+  }
+
+  a:visited {
+    color: black;
+  }
+
+  a:hover {
+    color: $scouts-blue;
+  }
+}

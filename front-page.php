@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col text-center">
+        <div class="col text-center links-format-white">
             <p><?php echo get_option ('front_page_announcement')?></p>
         </div>
     </div>
@@ -33,11 +33,11 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-xs-12 bg-scouts-purple text-center">
-                        <div class="row welcome-section-info-sections"><a href="/?page_id=<?= get_option( "section_beavers_target" ) ?>"><h3>Beavers</h3></a></div>
-                        <div class="row welcome-section-info-sections"><a href="/?page_id=<?= get_option( "section_cubs_target" ) ?>"><h3>Cubs</h3></a></div>
-                        <div class="row welcome-section-info-sections"><a href="/?page_id=<?= get_option( "section_scouts_target" ) ?>"><h3>Scouts</h3></a></div>
-                        <div class="row welcome-section-info-sections"><a href="/?page_id=<?= get_option( "section_explorers_target" ) ?>"><h3>Explorers</h3></a></div>
-                        <div class="row welcome-section-info-sections"><a href="/?page_id=<?= get_option( "section_network_target" ) ?>"><h3>Network</h3></a></div>
+                        <div class="row welcome-section-info-sections links-format-white"><a href="/?page_id=<?= get_option( "section_beavers_target" ) ?>"><h3>Beavers</h3></a></div>
+                        <div class="row welcome-section-info-sections links-format-white"><a href="/?page_id=<?= get_option( "section_cubs_target" ) ?>"><h3>Cubs</h3></a></div>
+                        <div class="row welcome-section-info-sections links-format-white"><a href="/?page_id=<?= get_option( "section_scouts_target" ) ?>"><h3>Scouts</h3></a></div>
+                        <div class="row welcome-section-info-sections links-format-white"><a href="/?page_id=<?= get_option( "section_explorers_target" ) ?>"><h3>Explorers</h3></a></div>
+                        <div class="row welcome-section-info-sections links-format-white"><a href="/?page_id=<?= get_option( "section_network_target" ) ?>"><h3>Network</h3></a></div>
                     </div>
                 </div>
                 </div>
@@ -66,10 +66,10 @@
         <div class="col-md-6">
             <div class="row"><h4>Young People in Scouting</h4></div>
             <div class="row"><p>Wherever we go and whatever we do, we put young people’s safety and wellbeing first.</p></div>
-            <div class="row"><a href="https://www.scouts.org.uk/information-for-parents/stay-safe"><h4>Find out more</h4></a></div>
+            <div class="row links-format-black"><a href="https://www.scouts.org.uk/information-for-parents/stay-safe"><h4>Find out more</h4></a></div>
         </div>
         <div class="col-md-6">
-            <div class="row"><a href="https://www.scouts.org.uk/information-for-parents/stay-safe"><h4>Safety Training</h4></a></div>
+            <div class="row links-format-black"><a href="https://www.scouts.org.uk/information-for-parents/stay-safe"><h4>Safety Training</h4></a></div>
         </div>
     </div>
 </div>
