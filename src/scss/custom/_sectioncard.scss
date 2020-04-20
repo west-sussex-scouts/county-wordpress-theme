@@ -1,6 +1,5 @@
 .section-card {
-  transition: transform .2s;
-
+  transition: transform 0.2s;
   h5 {
     font-size: 30px;
     font-weight: 800;
@@ -11,10 +10,11 @@
   }
 
   .card-body {
-    height: 135px;
+    height: 225px;
   }
 
   .card-footer {
+    padding: 10px;
     color: $black;
     font-weight: 700;
   }
@@ -24,8 +24,7 @@
   }
 
   &:hover {
-    box-shadow: 0 5px 11px 0 rgba(50, 50, 50, .08);
-    transform: scale(1.1);
+    box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
     z-index: 10000;
   }
 }

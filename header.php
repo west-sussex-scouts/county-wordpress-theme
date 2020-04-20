@@ -31,7 +31,7 @@
 </head>
 <body>
 <header id="home" class="header" itemtype="http://schema.org/WPHeader" style="min-height: 90px;">
-    <nav class="navbar navbar-expand-md navbar-light pl-md-5 pr-md-5" id="main-nav" style="min-height: 90px;">
+    <nav class="navbar navbar-expand-md navbar-light pl-md-5 pr-md-5 bg-scouts-purple" id="main-nav" style="min-height: 90px;">
         <a class="navbar-brand" href="/">
 			<?php
 			$custom_logo_id = get_theme_mod( 'custom_logo' );

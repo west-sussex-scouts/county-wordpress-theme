@@ -68,6 +68,64 @@ function add_charity_number_to_customizer( $wp_customize ) {
 
 add_action( 'customize_register', 'add_charity_number_to_customizer' );
 
+function add_front_page_message_to_customizer( $wp_customize ) {
+	$wp_customize->add_setting(
+		'front_page_message',
+		array(
+			'default'    => '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'front_page_message',
+		array(
+			'label'       => __( 'Front Page Message', 'textdomain' ),
+			'description' => __( 'Message to appear on the front page', 'textdomain' ),
+			'settings'    => 'front_page_message',
+			'priority'    => 10,
+			'section'     => 'title_tagline',
+			'type'        => 'text',
+		)
+	) );
+	$wp_customize->selective_refresh->add_partial( 'front_page_message', array(
+		'selector'        => '#front_page_message',
+		'render_callback' => 'front_page_message',
+	) );
+}
+
+add_action( 'customize_register', 'add_front_page_message_to_customizer' );
+
+function add_front_page_announcement_to_customizer( $wp_customize ) {
+	$wp_customize->add_setting(
+		'front_page_announcement',
+		array(
+			'default'    => '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'front_page_announcement',
+		array(
+			'label'       => __( 'Front Page Announcement', 'textdomain' ),
+			'description' => __( 'Announcement to appear as a banner at the top of the homepage', 'textdomain' ),
+			'settings'    => 'front_page_announcement',
+			'priority'    => 10,
+			'section'     => 'title_tagline',
+			'type'        => 'text',
+		)
+	) );
+	$wp_customize->selective_refresh->add_partial( 'front_page_announcement', array(
+		'selector'        => '#front_page_announcement',
+		'render_callback' => 'front_page_announcement',
+	) );
+}
+
+add_action( 'customize_register', 'add_front_page_announcement_to_customizer' );
+
 function add_social_media_to_customizer( $wp_customize ) {
 	$wp_customize->add_section( 'social_media', array(
 		'title'    => __( 'Social Media Info', 'scoutstheme' ),
@@ -152,12 +210,6 @@ function add_homepage_settings_to_customizer( $wp_customize ) {
 			'selector'     => '#welcome_fom'
 		),
 		array(
-			'setting_name' => 'welcome_jt_target',
-			'label'        => 'Welcome > Join Today',
-			'description'  => 'Page that "Join Today" link in "Welcome" points to',
-			'selector'     => '#welcome_jt'
-		),
-		array(
 			'setting_name' => 'section_beavers_target',
 			'label'        => 'Sections > Beavers',
 			'description'  => 'Page that "Beavers" button in Sections list points to',
@@ -192,6 +244,12 @@ function add_homepage_settings_to_customizer( $wp_customize ) {
 			'label'        => 'Adult Volunteers > Find Out More',
 			'description'  => 'Page that "Find Out More" link in "Adult Volunteers" points to',
 			'selector'     => '#av_fom'
+		),
+		array(
+			'setting_name' => 'safeguarding_from_target',
+			'label'        => 'Safe Guarding > Find Out More',
+			'description'  => 'Page that "Find out more " link in "Safe Guarding" points to',
+			'selector'     => '#safeguarding_from'
 		),
 	];
 

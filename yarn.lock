@@ -3496,6 +3496,11 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
+prettier@^1.19.1:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
+  integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+
 private@^0.1.6:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
@@ -3853,10 +3858,10 @@ sass-lint@^1.13.1:
     path-is-absolute "^1.0.0"
     util "^0.10.3"
 
-sass@^1.24.4:
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.24.4.tgz#aa50575a9ed2b9e9645b5599156fd149bdad9eaa"
-  integrity sha512-SqizkIEEcVPzmK1tYdlNRl/RSXMEwGcifL9GD+S2p9rEPdj6ycRbk4PWZs0jwlajNSyBPo/SXRB81i22SG0jmw==
+sass@^1.23.7:
+  version "1.26.3"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.26.3.tgz#412df54486143b76b5a65cdf7569e86f44659f46"
+  integrity sha512-5NMHI1+YFYw4sN3yfKjpLuV9B5l7MqQ6FlkTcC4FT+oHbBRUZoSjHrrt/mE0nFXJyY2kQtU9ou9HxvFVjLFuuw==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
