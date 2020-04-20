@@ -2,7 +2,10 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/../../../websites/wordpress-5.1.1" />
+      <path value="$PROJECT_DIR$/../../libs/wordpress" />
+      <path value="$PROJECT_DIR$/vendor/wp-bootstrap/wp-bootstrap-navwalker" />
+      <path value="$PROJECT_DIR$/vendor/yahnis-elsts/plugin-update-checker" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
 </project>
