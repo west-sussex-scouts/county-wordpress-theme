@@ -22,7 +22,7 @@
         "prettier": "^2.0.4",
         "sass": "^1.23.7",
         "sass-lint": "^1.13.1",
-        "simple-git": "^1.129.0",
+        "simple-git": "^2.35.1",
         "uglifyjs-webpack-plugin": "^2.2.0",
         "webpack": "^4.41.5",
         "webpack-cli": "^3.3.10"
